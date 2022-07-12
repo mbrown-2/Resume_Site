@@ -35,7 +35,7 @@
                 thoughts on how I could improve my work, feel free to share your contact information and a message down below. Thanks!
             </p>
 
-            <form action="https://httpbin.org/get" method="get">
+            <form action="https://httpbin.org/post" method="post">
                 <fieldset>
                     <legend>Form Submission</legend>
                     <label for="fname">First name:</label>
@@ -47,8 +47,23 @@
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email">
                     <br /><br />
+                    <label for="colors">Select the color you'd like to see as part of this website's theme:</label>
+                    <select name="colors" id="colors">
+                        <optgroup label="Lighter Themes">
+                            <option value="Mint">Mint</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Sky Blue">Sky Blue</option>
+                        </optgroup>
+                        <optgroup label="Darker Themes">
+                            <option value="Crimson">Crimson</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Space Gray">Space Gray</option>
+                        </optgroup>
+                    </select>
+                    <br /><br />
                     <label for="message">Message for the maker:</label>
-                    <input type="text" id="message" name="message">
+                    <br />
+                    <textarea id="message" name="message" rows="4" cols="100"></textarea>
                     <br /><br />
                     <input type="submit" value="Submit">
                 </fieldset>
@@ -79,7 +94,7 @@
                 <li>
                     <h3>Inserting pictures</h3>
                     <picture>
-                        <img src="../content/images/flower-image-backup.jpg" alt="Flowers" style="width:auto;">
+                        <img src="../content/images/flower-image-backup.jpg" alt="Flowers">
                       </picture>
                 </li>
             </ol>
