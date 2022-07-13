@@ -61,6 +61,15 @@
                         </optgroup>
                     </select>
                     <br /><br />
+                    <label for="browser">Let me know which browser I should support next:</label>
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                        <option value="Chrome">
+                        <option value="Safari">
+                        <option value="Microsoft Edge">
+                        <option value="Internet Explorer..... lol">
+                    </datalist>
+                    <br /><br />
                     <label for="message">Message for the maker:</label>
                     <br />
                     <textarea id="message" name="message" rows="4" cols="100"></textarea>
@@ -104,9 +113,31 @@
                 </li>
                 <li>
                     <h3>Experimental Text</h3>
+                    <p>If you don't see any text below this sentence, things are working ;)</p>
                     <template>
-                        <p>You might not tell, but this text shouldn</p>
+                        <p>
+                            If you see this, you must be using Inspect Element! In reality, this is a paragraph
+                            enclosed by a template tag (which sounds a lot like semantics to me). With the use of 
+                            JavaScript, we can choose when and how we want to display this. But for now, it'll stay invisible...
+                        </p>
                     </template>
+                </li>
+                <li>
+                    <h3>Experimentation with shapes</h3>
+                    <p>
+                        The following utilizes the Canvas element (but no specific scripting in JS) to construct a simplisiic
+                        shape on-screen.
+                    </p>
+                    <canvas id="myCanvas" width="300" height="300" style="border:10px solid #0681c9;">
+                        The canvas element is not supported by this browser.
+                    </canvas>
+                    <br />
+                    <p>
+                        On the other hand, we can try working with the svg element and draw on the page using vectors.
+                    </p>
+                    <svg width="300" height="300">
+                        <circle cx="150" cy="150" r="100" stroke-width="2" fill="purple" />
+                    </svg>
                 </li>
             </ol>
         </section>
