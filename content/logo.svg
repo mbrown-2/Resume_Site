@@ -1,0 +1,14 @@
+<svg width="260" height="127" viewBox="0 0 260 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="58.0376" y="70.6073" width="10" height="86.4428" rx="5" transform="rotate(144.767 58.0376 70.6073)" fill="black"/>
+<rect x="52.1685" y="76.3788" width="10" height="86.4428" rx="5" transform="rotate(-144.77 52.1685 76.3788)" fill="black"/>
+<rect x="2" y="2" width="10" height="125" rx="5" fill="black"/>
+<rect x="90" y="26" width="10" height="101" rx="5" fill="black"/>
+<rect x="90" y="12" width="10" height="85" rx="5" transform="rotate(-90 90 12)" fill="black"/>
+<rect x="179" y="2" width="10" height="112" rx="5" fill="black"/>
+<rect x="90" y="127" width="10" height="101" rx="5" transform="rotate(-90 90 127)" fill="black"/>
+<rect x="90" y="70" width="10" height="60" rx="5" transform="rotate(-90 90 70)" fill="black"/>
+<rect x="179" y="70" width="10" height="27" rx="5" transform="rotate(-90 179 70)" fill="black"/>
+<rect x="179" y="12" width="10" height="12" rx="5" transform="rotate(-90 179 12)" fill="black"/>
+<path d="M186 122C222.202 122 255 109.24 255 93.5C255 77.7599 222.202 65 186 65" stroke="black" stroke-width="10"/>
+<path d="M186 65C222.202 65 255 52.0163 255 36C255 19.9837 222.202 7 186 7" stroke="black" stroke-width="10"/>
+</svg>
