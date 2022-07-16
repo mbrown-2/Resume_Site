@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../styles/experiments-styles.css">
+        <link rel="stylesheet" href="../styles/master-stylesheet.css">
         <script src="../scripts/experiments-script.js"></script>
         <style>body {border-style: solid;}</style>
         <title>Summertime Tinkering - Experimnents</title>
@@ -12,7 +13,7 @@
         <header>
             <h1><b>Summertime Tinkering</b></h1>
             <h2><i>A personal portfolio of accomplishments across all four seasons.</i></h2>
-            <a href="../index.html" title="Back to landing page"><img src="../content/logo.svg" alt="Site Logo"></a>
+            <a href="../index.html" title="Back to landing page"><img src="../content/svg-resources/logo.svg" alt="Site Logo"  id="logo-header"></a>
             <nav>
                 <ul>
                     <li><a href="../index.html">Welcome</a></li>
@@ -20,128 +21,130 @@
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="videos.html">Videos</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="#">Experiments</a></li>
+                    <li><a href="#">Experiments (HW2)</a></li>
                 </ul>
             </nav>
         </header>
         <hr />
 
-        <!-- Experimental form submission section -->
-        <section>
-            <h2>Practice Review Form</h2>
-            <aside><b>Please note:</b> The following fill-out form is for <em><span style="color:red">experimental purposes</span></em> only!</aside>
-            <pre>
-                Thank you for visiting my site. If you've any interest in my abilities or would want to reach out and share your 
-                thoughts on how I could improve my work, feel free to share your contact information and a message down below. Thanks!
-            </pre>
+        <main>
+            <!-- Experimental form submission section -->
+            <section>
+                <h2>Practice Review Form</h2>
+                <aside><b>Please note:</b> The following fill-out form is for <em><span style="color:red">experimental purposes</span></em> only!</aside>
+                <pre>
+                    Thank you for visiting my site. If you've any interest in my abilities or would want to reach out and share your 
+                    thoughts on how I could improve my work, feel free to share your contact information and a message down below. Thanks!
+                </pre>
 
-            <form action="https://httpbin.org/post" method="post">
-                <fieldset>
-                    <legend>Form Submission</legend>
-                    <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname">
-                    <br /><br />
-                    <label for="lname">Last name:</label>
-                    <input type="text" id="lname" name="lname">
-                    <br /><br />
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email">
-                    <br /><br />
-                    <label for="colors">Select the color you'd like to see as part of this website's theme:</label>
-                    <select name="colors" id="colors">
-                        <optgroup label="Lighter Themes">
-                            <option value="Mint">Mint</option>
-                            <option value="Yellow">Yellow</option>
-                            <option value="Sky Blue">Sky Blue</option>
-                        </optgroup>
-                        <optgroup label="Darker Themes">
-                            <option value="Crimson">Crimson</option>
-                            <option value="Purple">Purple</option>
-                            <option value="Space Gray">Space Gray</option>
-                        </optgroup>
-                    </select>
-                    <br /><br />
-                    <label for="browser">Let me know which browser I should support next:</label>
-                    <input list="browsers" name="browser" id="browser">
-                    <datalist id="browsers">
-                        <option value="Chrome">
-                        <option value="Safari">
-                        <option value="Microsoft Edge">
-                        <option value="Internet Explorer..... lol">
-                    </datalist>
-                    <br /><br />
-                    <label for="message">Message for the maker:</label>
-                    <br />
-                    <textarea id="message" name="message" rows="4" cols="100"></textarea>
-                    <br /><br />
-                    <input type="submit" value="Submit">
-                </fieldset>
-            </form>
-        </section>
+                <form action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <legend>Form Submission</legend>
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname">
+                        <br /><br />
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname">
+                        <br /><br />
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email">
+                        <br /><br />
+                        <label for="colors">Select the color you'd like to see as part of this website's theme:</label>
+                        <select name="colors" id="colors">
+                            <optgroup label="Lighter Themes">
+                                <option value="Mint">Mint</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Sky Blue">Sky Blue</option>
+                            </optgroup>
+                            <optgroup label="Darker Themes">
+                                <option value="Crimson">Crimson</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Space Gray">Space Gray</option>
+                            </optgroup>
+                        </select>
+                        <br /><br />
+                        <label for="browser">Let me know which browser I should support next:</label>
+                        <input list="browsers" name="browser" id="browser">
+                        <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Safari">
+                            <option value="Microsoft Edge">
+                            <option value="Internet Explorer..... lol">
+                        </datalist>
+                        <br /><br />
+                        <label for="message">Message for the maker:</label>
+                        <br />
+                        <textarea id="message" name="message" rows="4" cols="100"></textarea>
+                        <br /><br />
+                        <input type="submit" value="Submit">
+                    </fieldset>
+                </form>
+            </section>
 
-        <br />
+            <br />
 
-        <!-- Experimental graphics section -->
-        <section>
-            <h2>Experiments with HTML elements and content</h2>
-            
-            <ol>
-                <li>
-                    <h3>MP3 sound effect</h3>
-                    <audio controls>
-                        <source src="../content/snake_spotted.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </li>
-                <li>
-                    <h3>Embeded video</h3>
-                    <video controls>
-                        <source src="../content/flower-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                </li>
-                <li>
-                    <h3>Inserting pictures</h3>
-                    <picture>
-                        <img src="../content/images/flower-image-backup.jpg" alt="Flowers">
-                      </picture>
-                </li>
-                <li>
-                    <h3>Goofy Antics</h3>
-                    <p><code>Be advised, the following button does.... absolutely nothing.</code></p>
-                    <button type="button" onclick="alert('sike')">Told ya' so</button>
-                </li>
-                <li>
-                    <h3>Experimental Text</h3>
-                    <p>If you don't see any text below this sentence, things are working ;)</p>
-                    <template>
+            <!-- Experimental graphics section -->
+            <section>
+                <h2>Experiments with HTML elements and content</h2>
+                
+                <ol>
+                    <li>
+                        <h3>MP3 sound effect</h3>
+                        <audio controls>
+                            <source src="../content/snake_spotted.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </li>
+                    <li>
+                        <h3>Embeded video</h3>
+                        <video controls>
+                            <source src="../content/flower-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </li>
+                    <li>
+                        <h3>Inserting pictures</h3>
+                        <picture>
+                            <img src="../content/images/flower-image-backup.jpg" alt="Flowers">
+                        </picture>
+                    </li>
+                    <li>
+                        <h3>Goofy Antics</h3>
+                        <p><code>Be advised, the following button does.... absolutely nothing.</code></p>
+                        <button type="button" onclick="alert('sike')">Told ya' so</button>
+                    </li>
+                    <li>
+                        <h3>Experimental Text</h3>
+                        <p>If you don't see any text below this sentence, things are working ;)</p>
+                        <template>
+                            <p>
+                                If you see this, you must be using Inspect Element! In reality, this is a paragraph
+                                enclosed by a template tag (which sounds a lot like semantics to me). With the use of 
+                                JavaScript, we can choose when and how we want to display this. But for now, it'll stay invisible...
+                            </p>
+                        </template>
+                    </li>
+                    <li>
+                        <h3>Experimentation with shapes</h3>
                         <p>
-                            If you see this, you must be using Inspect Element! In reality, this is a paragraph
-                            enclosed by a template tag (which sounds a lot like semantics to me). With the use of 
-                            JavaScript, we can choose when and how we want to display this. But for now, it'll stay invisible...
+                            The following utilizes the Canvas element (but no specific scripting in JS) to construct a simplisiic
+                            shape on-screen.
                         </p>
-                    </template>
-                </li>
-                <li>
-                    <h3>Experimentation with shapes</h3>
-                    <p>
-                        The following utilizes the Canvas element (but no specific scripting in JS) to construct a simplisiic
-                        shape on-screen.
-                    </p>
-                    <canvas id="myCanvas" width="300" height="300" style="border:10px solid #0681c9;">
-                        The canvas element is not supported by this browser.
-                    </canvas>
-                    <br />
-                    <p>
-                        On the other hand, we can try working with the svg element and draw on the page using vectors.
-                    </p>
-                    <svg width="300" height="300">
-                        <circle cx="150" cy="150" r="100" stroke-width="2" fill="purple" />
-                    </svg>
-                </li>
-            </ol>
-        </section>
+                        <canvas id="myCanvas" width="300" height="300" style="border:10px solid #0681c9;">
+                            The canvas element is not supported by this browser.
+                        </canvas>
+                        <br />
+                        <p>
+                            On the other hand, we can try working with the svg element and draw on the page using vectors.
+                        </p>
+                        <svg width="300" height="300">
+                            <circle cx="150" cy="150" r="100" stroke-width="2" fill="purple" />
+                        </svg>
+                    </li>
+                </ol>
+            </section>
 
+        </main>
         <hr />
         <footer>
             <nav>
