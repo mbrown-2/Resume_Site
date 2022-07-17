@@ -17,6 +17,12 @@ header {
     left: 0;
     right: 0;
     padding: 1em;
+    z-index: 1;
+}
+
+.header-titles {
+    color: green;
+    left: 0;
 }
 
 main {
@@ -54,4 +60,11 @@ Must use:
 
 - after shrink:
     - title + subtitle disappears, replaced by logo
+*/
+
+/*
+- entire header --> block element
+- h1 and h2 --> inline block
+- navbar --> inline block
+
 */
