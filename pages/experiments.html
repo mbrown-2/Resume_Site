@@ -103,12 +103,6 @@
                         </video>
                     </li>
                     <li>
-                        <h3>Inserting pictures</h3>
-                        <picture>
-                            <img src="../content/images/flower-image-backup.jpg" alt="Flowers">
-                        </picture>
-                    </li>
-                    <li>
                         <h3>Goofy Antics</h3>
                         <p><code>Be advised, the following button does.... absolutely nothing.</code></p>
                         <button type="button" onclick="alert('sike')">Told ya' so</button>
@@ -142,6 +136,44 @@
                         </svg>
                     </li>
                 </ol>
+            </section>
+
+            <section>
+                <form action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <legend>Midterm - Practice Form</legend>
+                        <label for="fname2">First name:</label>
+                        <input type="text" id="fname2" name="fname2">
+                        <br /><br />
+                        <label for="lname2">Last name:</label>
+                        <input type="text" id="lname2" name="lname2">
+                        <br /><br />
+                        <label for="PID">PID:</label>
+                        <input type="text" id="PID" name="PID">
+                        <br /><br />
+                        <label for="year">Year:</label>
+                        <input list="yearSelect" name="year" id="year">
+                        <datalist id="yearSelect">
+                            <option value="2022">
+                            <option value="2021">
+                            <option value="2020">
+                            <option value="2019">
+                        </datalist>
+                        <br /><br />
+                        <label for="bonus">Bonus here:</label>
+                        <select id="bonus" namee="bonus">
+                            <optgroup label="part 1">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="part 2">
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                            </optgroup>
+                        </select>
+                        <input type="submit" name="submit">
+                    </fieldset>
+                </form>
             </section>
 
         </main>
