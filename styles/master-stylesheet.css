@@ -20,7 +20,6 @@ header {
     box-shadow: 0 4px 2px -1px rgb(189, 189, 189);
 }
 
-
 main {
     margin-top: 15em;
 }
@@ -46,27 +45,21 @@ body {
     background-color: #fffef0;
 }
 
+#welcome-table {
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: 30%; */
+    grid-template-columns: repeat(auto-fit, 30%);
+    justify-content: space-evenly;
+    text-align: center;
+    background-color:rgb(221, 221, 221);
+    padding: 1rem 0rem 1rem 0rem;
+    table-layout: fixed;
+}
 
-/*
-Must use:
-- CSS variables
-- Relative units (ie. em, vh, vw, %, etc.)
-- CSS animations, transitions, transformations
-- Media Queries
 
-*/
-
-/*
-- before shrink:
-    - title + subtitle to the left (VStack), and tab list to the right
-
-- after shrink:
-    - title + subtitle disappears, replaced by logo
-*/
-
-/*
-- entire header --> block element
-- h1 and h2 --> inline block
-- navbar --> inline block
-
-*/
+#welcome-table-column {
+    background-color: white;
+    border-radius: 1.5rem;
+    
+}
