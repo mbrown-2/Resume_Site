@@ -80,7 +80,7 @@ h2 {
 }
 
 
-body > p, main > p, section > p {
+body > p, main > p, section > p, article > p {
     font-size: 1.3rem;
     margin-left: 6.5%;
     width: 60%;
@@ -137,14 +137,3 @@ main ul {
 .video-entry > iframe {
     margin-right: 5rem;
 }
-
-/*
-.video-entry iframe {
-    float: left;
-
-}
-
-.video-entry p {
-    margin-bottom: 20rem;
-}
-*/
