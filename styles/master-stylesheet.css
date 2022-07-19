@@ -55,8 +55,35 @@ main {
     margin-top: 15em;
 }
 
-p {
+h2 {
+    margin-left: 5%;
+}
+
+.horizontal-line {
+    font-size: calc(1.5rem + 1vw);
+    font-weight: bold;
+    color: rgb(1, 2, 2);
+    display: flex;
+    align-items: center;
+}
+.horizontal-line::before {
+    content: "";
+    flex: 0.1;
+    border-bottom: 3px solid rgb(1, 2, 2);
+    margin-right: 1rem;
+}
+.horizontal-line::after {
+    content: "";
+    flex: 1;
+    border-bottom: 3px solid rgb(1, 2, 2);
+    margin-left: 1rem;
+}
+
+
+body > p, main > p, section > p {
     font-size: 1.3rem;
+    margin-left: 6.5%;
+    width: 60%;
 }
 
 #logo-header {
@@ -74,8 +101,6 @@ nav ul {
     margin-top: 2em;
 }
 
-
-
 #welcome-table {
     position: absolute;
     left: 0;
@@ -90,6 +115,9 @@ nav ul {
     table-layout: fixed;
 }
 
+main ul {
+    list-style-type: none;
+}
 
 #welcome-table-column {
     background-color: white;
@@ -97,3 +125,26 @@ nav ul {
     
 }
 
+#video-list {
+
+}
+
+.video-entry {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-entry > iframe {
+    margin-right: 5rem;
+}
+
+/*
+.video-entry iframe {
+    float: left;
+
+}
+
+.video-entry p {
+    margin-bottom: 20rem;
+}
+*/
