@@ -16,7 +16,9 @@
 }
 
 body {
-    background-image: url('../content/svg-resources/background-aura-4.svg');
+    font-family: 'Inter';
+    background-color: #fffef0;
+    background-image: url('../content/svg-resources/background-aura-3.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -32,7 +34,8 @@ header {
     box-shadow: 0 4px 2px -1px rgb(189, 189, 189);
 }
 
-header > nav a:link, header > nav a:visited {
+
+header > nav a:link, header > nav a:visited, footer > nav a:link, footer > nav a:visited {
     text-decoration: none;
     background-color: white;
     padding: .5rem;
@@ -42,7 +45,7 @@ header > nav a:link, header > nav a:visited {
     color: green;
 }
 
-header > nav a:hover {
+header > nav a:hover, footer > nav a:hover {
     transition-duration: 500ms;
     background-color: var(--secondary-color);
     color: rgb(0, 0, 0);
@@ -50,6 +53,10 @@ header > nav a:hover {
 
 main {
     margin-top: 15em;
+}
+
+p {
+    font-size: 1.3rem;
 }
 
 #logo-header {
@@ -68,12 +75,11 @@ nav ul {
 }
 
 
-body {
-    font-family: 'Inter';
-    background-color: #fffef0;
-}
 
 #welcome-table {
+    position: absolute;
+    left: 0;
+    right: 0;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(auto-fit, 25%);
