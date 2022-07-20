@@ -55,10 +55,6 @@ main {
     margin-top: 15em;
 }
 
-h2 {
-    margin-left: 5%;
-}
-
 .horizontal-line {
     font-size: calc(1.5rem + 1vw);
     font-weight: bold;
@@ -101,6 +97,37 @@ nav ul {
     margin-top: 2em;
 }
 
+
+#landing-opening {
+    display: flex;
+    flex-direction: row;
+}
+
+#opening-statement {
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 2rem rgb(189, 189, 189);
+    border-radius: 1.5rem;
+    width: 35%;
+}
+
+#opening-statement > p {
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+#welcome-page-slideshow {
+    background-color: white;
+    border: solid var(--secondary-color) 10px;
+    border-radius: 1.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 #welcome-table {
     position: absolute;
     left: 0;
@@ -122,12 +149,9 @@ main ul {
 #welcome-table-column {
     background-color: white;
     border-radius: 1.5rem;
-    
+    box-shadow: 1rem 1rem 1rem 1rem gray;
 }
 
-#video-list {
-
-}
 
 .video-entry {
     display: flex;
@@ -174,4 +198,19 @@ main ul {
     height: 35%;
     width: 80%;
     margin: 1rem;
+}
+
+/*
+#hoyle-img {
+    border-style: solid;
+    border-width: .25rem;
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+}
+*/
+
+#hoyle-img {
+    width: 200px;
+    height: 200px;
 }
