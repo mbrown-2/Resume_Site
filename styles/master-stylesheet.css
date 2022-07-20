@@ -17,7 +17,7 @@
 
 body {
     font-family: 'Inter';
-    background-color: #fffef0;
+    background-color: var(--off-white);
     background-image: url('../content/svg-resources/background-aura-3.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -138,13 +138,40 @@ main ul {
     margin-right: 5rem;
 }
 
+/*
 .plantpal-image-group {
     display: flex;
+    flex-direction: row;
     flex-basis: auto;
 }
 
 .plantpal-image-group > img {
-    object-fit: contain;
-    width: 100%;
-    max-height: 100%;
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+}
+*/
+
+.plantpal-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.plantpal-container-child-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.plantpal-container-child-left > img {
+    object-fit: cover;
+    margin: 1rem;
+    height: 70%
+}
+
+.plantpal-container-child-right > img {
+    object-fit: cover;
+    height: 35%;
+    width: 80%;
+    margin: 1rem;
 }
