@@ -180,7 +180,7 @@ main ul {
     list-style-type: none;
 }
 
-#welcome-table-column {
+.welcome-table-column {
     background-color: white;
     border-radius: 1.5rem;
     box-shadow: .25rem .25rem  gray;
@@ -244,7 +244,7 @@ main ul {
 }
 */
 
-#hoyle-img {
+.hoyle-img {
     width: 200px;
     height: 200px;
 }
