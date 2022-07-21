@@ -3,23 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../styles/about-styles.css">
+        <link rel="stylesheet" href="../styles/master-stylesheet.css">
         <script src="../scripts/portfolio-script.js"></script>
         <title>Summertime Tinkering - About Me</title>
     </head>
 
     <body>
         <header>
-            <h1><b>Summertime Tinkering</b></h1>
-            <h2><i>A personal portfolio of accomplishments across all four seasons.</i></h2>
-            <a href="../index.html" title="Back to landing page"><img src="https://via.placeholder.com/150" alt="Site Logo"></a>
+            <a href="../index.html" title="Back to landing page"><img src="../content/svg-resources/logo.svg" alt="Site Logo"  id="logo-header"></a>
+            <div id="header-titles">
+                <h1 class="header-titles"><b>Summertime Tinkering</b></h1>
+                <h2 class="header-titles"><i>A personal portfolio of accomplishments across all four seasons.</i></h2>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="../index.html">Welcome</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="videos.html">Videos</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="experiments.html">Experiments</a></li>
+                    <li><a href="../index.html" title="Navigate to Landing page">Welcome</a></li>
+                    <li><a href="/pages/projects.html" title="Navigate to Projects page">Projects</a></li>
+                    <li><a href="/pages/portfolio.html" title="Navigate to Portfolio page">Portfolio</a></li>
+                    <li><a href="/pages/videos.html" title="Navigate to Videos page">Videos</a></li>
+                    <li><a href="#" title="Current page">About Me</a></li>
+                    <li><a href="/pages/experiments.html" title="Navigate to Experiments page">Experiments (HW2)</a></li>
                 </ul>
             </nav>
         </header>
@@ -27,7 +30,7 @@
 
         <main>
             <section>
-                <h2>About Me</h2>
+                <div class="horizontal-line">About Me</div>
                 <p>
                     If you're interested in the formalities, you've come to the right place. My name is Michael Brown, 
                     a soon-to-be graduate from the University of California, San Diego with a goal to obtain a Bachelor's in 
@@ -42,13 +45,19 @@
                 <h2>Personal Resume</h2>
                 <iframe src="../content/mbrown-Resume+(3)+(1).pdf" width="700" height="500"></iframe>
             </section>
+
             <section>
-                <h2>Work Experience</h2>
-                <!-- Two divs for a two-column layout -->
-                <!-- Should consider retweaking the About wireframe to see if a single-column design flows more naturally. -->
+                <div class="horizontal-line">Work Experience</div>
                 <div class="HC-Col">
                     <h3>HoyleCohen - <em>Marketing + Programming Intern</em></h3>
-                    <img src="https://via.placeholder.com/500x300" alt="Image of Self with Team at HC">
+                    <picture>
+                        <source media="(min-width: 500px)" srcset="../content/images/hc-group-photo.PNG" style="width: 500px; height: 400px;">
+                        <img src="../content/images/hc-logo.png" alt="HoyleCohen Logo" class="hoyle-img">
+                    </picture>
+                    <picture>
+                        <source media="(min-width: 500px)" srcset="../content/images/hc-presentation-image.PNG" style="width: 500px; height: 400px;">
+                        <img src="../content/images/hc-logo.png" alt="HoyleCohen Logo" class="hoyle-img">
+                    </picture>
                 </div>
                 <div class="AMC-Col">
                     <h3>AMC Theatres - <em>Crew Member + Leadership</em></h3>

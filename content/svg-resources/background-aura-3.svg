@@ -1,0 +1,14 @@
+<!-- Note: svg designs are original work and were imported from a personal Figma document -->
+
+<svg width="1712" height="914" viewBox="0 0 1712 914" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1712" height="914" fill="url(#paint0_diamond_18_2)"/>
+<defs>
+<radialGradient id="paint0_diamond_18_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(856 412.5) rotate(-36.7219) scale(1510.21 3896.71)">
+<stop stop-color="#FFFDEA"/>
+<stop offset="0.287726" stop-color="#F4FFDD"/>
+<stop offset="0.627174" stop-color="#FFE1E1"/>
+<stop offset="0.911242" stop-color="#E8FFCB"/>
+<stop offset="0.93061" stop-color="#FFFDEC"/>
+</radialGradient>
+</defs>
+</svg>

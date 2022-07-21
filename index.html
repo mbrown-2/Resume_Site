@@ -3,102 +3,108 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../styles/welcome-styles.css">
+        <link rel="stylesheet" href="styles/master-stylesheet.css">
         <script src="../scripts/welcome-script.js"></script>
         <title>Summertime Tinkering - Welcome</title>
     </head>
 
     <body>
         <header>
-            <h1><b>Summertime Tinkering</b></h1>
-            <h2><i>A personal portfolio of accomplishments across all four seasons.</i></h2>
-            <a href="index.html" title="Back to landing page"><img src="https://via.placeholder.com/150" alt="Site Logo"></a>
+            <aside>
+                <a href="../index.html" title="Back to landing page"><img src="../content/svg-resources/logo.svg" alt="Site Logo"  id="logo-header"></a>
+            </aside>
+            <div id="head-element">
+                <h1><b>Summertime Tinkering</b></h1>
+                <h2><i>A personal portfolio of accomplishments across all four seasons.</i></h2>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#">Welcome</a></li>
-                    <li><a href="/pages/projects.html">Projects</a></li>
-                    <li><a href="/pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="/pages/videos.html">Videos</a></li>
-                    <li><a href="/pages/about.html">About Me</a></li>
-                    <li><a href="/pages/experiments.html">Experiments</a></li>
+                    <li><a href="#" title="Current page">Welcome</a></li>
+                    <li><a href="/pages/projects.html" title="Navigate to Projects page">Projects</a></li>
+                    <li><a href="/pages/portfolio.html" title="Navigate to Portfolio page">Portfolio</a></li>
+                    <li><a href="/pages/videos.html" title="Navigate to Videos page">Videos</a></li>
+                    <li><a href="/pages/about.html" title="Navigate to About Me page">About Me</a></li>
+                    <li><a href="/pages/experiments.html" title="Navigate to Experiments page">Experiments (HW2)</a></li>
                 </ul>
             </nav>
         </header>
         <hr />
 
         <!-- Self note: simply need to refer to reference work and retrieve some quick content assets (images specifically) -->
-        <div id="welcome-page-slideshow">
-            <figure>
-                <img src="https://via.placeholder.com/750x300" alt="Image of Commencement">
-                <figcaption>With a few extra classes to go, I'll be an offical graduate by December 2022.</figcaption>
-            </figure>
-            <figure>
-                <img src="https://via.placeholder.com/750x300" alt="SwiftUI image of self-progress">
-                <figcaption>When classwork piques interest... This summer, I start from scratch to learn and test my skills in SwiftUI.</figcaption>
-            </figure>
-            <figure>
-                <img src="https://via.placeholder.com/750x300" alt="Figma spreadsheet designs and">
-                <figcaption>A collaborative experience with a real-world stakeholder in advocacy for conservatorship reform.</figcaption>
-            </figure>
-            <figure>
-
-            </figure>
-        </div>
-        
-        <br />
-
-        <!-- Website Synopsis; self-note, the opening page is moreso to have a bit of fun -->
         <main>
-            <h2>Hey there! Glad you could make it.</h2>
-            <p>
-                What happens when a student has too much spare time over the summer? Chances are, it's not always put 
-                to good use. But if you've somehow found your way here and I'm not actually dreaming, then surely 
-                enough I made something cool. In other words, I have my own website!
-            </p>
+            <section id="landing-opening">
+                <div id="opening-statement">
+                    <h2>Hey there. Glad you could swing by.</h2>
+                    <p>
+                        What happens when a student has too much spare time over the summer? Partying, gaming, or anything in between? 
+                        Chances are, the time is not always put to good use. But if you've somehow found your way here, 
+                        then surely enough I built something nifty for us to observe. In other words, I have my own website!
+    
+                        <br /><br />
+                    </p>
+                </div>
+                <div id="welcome-page-slideshow">
+                    <h2>Announcements</h2>
+                    <figure>
+                        <img src="https://via.placeholder.com/600x300" alt="Image of Commencement">
+                        <figcaption>
+                            With a few extra classes to go, I'll be an offical graduate by December 2022.
+                            <em><b>(Note - text in this position is still placeholder and will swap based on the present image once JavaScript is implemented, also, the 
+                            dots below are clickable with hoveer and active/focus styles for changing color)</b></em>
+                        </figcaption>
+                    </figure>
+                    <div id="dot-group">
+                        <span class="nav-dot"></span>
+                        <span class="nav-dot"></span>
+                        <span class="nav-dot"></span>
+                        </div>
+                </div>
+            </section>
+            <br />
 
-            <h2>That's great news and all, but what's in it for me?</h2>
-            <p>
-                Fear not fellow web-surfer! If none of the following points nab your attention, you'd better <s>skedaddle</s> 
-                try clicking a different tab up above. Surely you'll discover something cool about yours truly.
-            </p>
+            <!-- Website Synopsis; self-note, the opening page is moreso to have a bit of fun -->
+            <section id="opening">
+                <div id="welcome-table">
+                    <div class="welcome-table-column">
+                        <h3>Personal Resume</h3>
+                        <img src="content/svg-resources/resume-symbol.svg" alt="Resume Symbol">
+                        <p>A formal resume along with references to previous work and internship - related experiences.</p>
+                    </div>
+                    <div class="welcome-table-column">
+                        <h3>Growing Portfolio</h3>
+                        <img src="content/svg-resources/portfolio-symbol.svg" alt="Portfolio Symbol">
+                        <p>A personal diary for tracking the progress I make throughout future, self-taught endeavors.</p>
+                    </div>
+                    <div class="welcome-table-column">
+                        <h3>Additional Content</h3>
+                        <img src="content/svg-resources/additional-symbol.svg" alt="Additional Content Symbol">
+                        <p>Expanding content such as videos (new projects, showcasing hobbies, or anything in between to spice things up).</p>
+                    </div>
+                </div>
 
-            <table>
-                <colgroup>
-                    <col span="3">
-                </colgroup>
-                <tr>
-                    <th>Personal Resume</th>
-                    <th>Growing Portfolio</th>
-                    <th>Additional Content</th>
-                </tr>
-                <tr>
-                    <td><img src="https://via.placeholder.com/100x100" alt="Icon placeholder 1"></td>
-                    <td><img src="https://via.placeholder.com/100x100" alt="Icon placeholder 2"></td>
-                    <td><img src="https://via.placeholder.com/100x100" alt="Icon placeholder 3"></td>
-                </tr>
-                <tr>
-                    <!-- Note: final descriptions will be more straightforward, but could still fall within the lines of having a 'casual tone' -->
-                    <td>... a centralized resource to help show myself to wider audiences ...</td>
-                    <td>... challenging myself to learn new topics; using this site as a personal hub to collect and look back at my progress ...</td>
-                    <td>... who knows, I might consider dropping in more content to capture my hobbies and other personal antics ... </td>
-                </tr>
-            </table>
+                <p>
+                    If none of the following points nab your attention, you should <s>skedaddle</s> 
+                    consider clicking a different tab up above. Surely you'll discover something new and cool about yours truly.
+                    If not, the feed below of recent activity might stir up some interest. But otherwise, a click is a click. Thanks 
+                    for stopping by my fellow web-surfer, and I hope you enjoy your stay.
+                </p>
+            </section>
+
+            <section>
+                <h2>At a Glance...</h2>
+                <aside>A quick look at my most-recent updates to this website.</aside>
+                <article>
+                    <h3>Site Launch</h3>
+                    <img src="https://via.placeholder.com/100x100" alt="Launch day article">
+                    <p>Description/link to part of website here</p>
+                </article>
+                <article>
+                    <h3>New site update</h3>
+                    <img src="https://via.placeholder.com/100x100" alt="Some random announcement">
+                    <p>Description/link to part of website here</p>
+                </article>
+            </section>
         </main>
-
-        <section>
-            <h2>At a Glance...</h2>
-            <aside>A quick look at my most-recent updates to this website.</aside>
-            <article>
-                <h3>Site Launch</h3>
-                <img src="https://via.placeholder.com/100x100" alt="Launch day article">
-                <p>Description/link to part of website here</p>
-            </article>
-            <article>
-                <h3>New site update</h3>
-                <img src="https://via.placeholder.com/100x100" alt="Some random announcement">
-                <p>Description/link to part of website here</p>
-            </article>
-        </section>
-
         <hr />
         <footer>
             <nav>
