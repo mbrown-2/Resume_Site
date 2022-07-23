@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="#">
+        <!-- Using a DOM Purifier -->
+        <script src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.min.js"></script>
+        <script src="../scripts/hw4-scripts.js"></script>
+        <style>
+            li {margin-bottom: 10px; }
+        </style>
+        <title>Native Dialogs</title>
+    </head>
+    <body>
+        <header>
+            <h1>HW4 Part 1 - Buttons and Event Listeners</h1>
+        </header>
+
+        <main>
+            <ol>
+                <li><button type="button" id="alert">Alert</button></li>
+                <li><button type="button" id="confirm">Confirm</button></li>
+                <li><button type="button" id="prompt">Prompt</button></li>
+                <li><button type="button" id="safer_prompt">Safer Prompt</button></li>
+            </ol>
+            <hr />
+            
+            <h2>Confirm - Output</h2>
+            <output id="confirm_target">Click the "Confirm" button above to change this sentence!</output>
+            
+            <hr />
+
+            <h2>Prompt - Output</h2>
+            <output id="prompt_target">Your output after clicking "Prompt" will replace this sentence.</output>
+            
+            <hr />
+
+            <h2>Safer Prompt - Output</h2>
+            <output id="safer_prompt_target">Likewise, your output after clicking "Safer Prompt" will replace this sentence.</output>
+        </main>
+    </body>
+</html>
