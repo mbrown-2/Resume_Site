@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="#">
         <!-- Using a DOM Purifier -->
         <script src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.min.js"></script>
+        <!-- <script type="module" src="../scripts/customdialog.js"></script> -->
+        
         <script type="module" src="../scripts/hw4-scripts.js"></script>
-        <script type="module" src="../scripts/customdialog.js"></script>
+
         <style> li {margin-bottom: 10px; } </style>
         <title>Native Dialogs</title>
     </head>
@@ -19,13 +20,13 @@
             <section>
                 <h2>Part 1 - Buttons and Event Listeners</h2>
 
-                <ol>
-                    <li><button type="button" id="alert">Alert</button></li>
-                    <li><button type="button" id="confirm">Confirm</button></li>
-                    <li><button type="button" id="prompt">Prompt</button></li>
-                    <li><button type="button" id="safer_prompt">Safer Prompt</button></li>
-                </ol>
-                <br />
+                <div id="part_1_buttons">
+                    <button type="button" id="alert">Alert</button>
+                    <button type="button" id="confirm">Confirm</button>
+                    <button type="button" id="prompt">Prompt</button>
+                    <button type="button" id="safer_prompt">Safer Prompt</button>
+                </div>
+                <p><em>Note:</em> You can click the dialog pop-up box to close it!</p>
                 <hr />
 
                 <dialog id="custom_dialog">
@@ -48,6 +49,8 @@
 
                 <dialog id="part_2" style="text-align: center;">
                     <p id="modal_dialog"></p>
+                    <label for="anyInput" id="inputLabel"></label>
+                    <input type="text" id="anyInput" name="anyInput"><br />
                     <button id="cancel_modal">Cancel</button>
                     <button id="confirm_modal">Ok</button>
                 </dialog>
