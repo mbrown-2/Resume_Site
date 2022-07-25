@@ -60,6 +60,9 @@ function saferPressed() {
     }, 0);
 }
 
+// Main and window
+// Essentially, breaking everything down into granular pieces
+// Avoiding nested usage of 'function() { ... }' in all of my code
 function main() {
     buttons_p1[0].addEventListener('click', alertPressed);
     buttons_p1[1].addEventListener('click', confirmPressed);

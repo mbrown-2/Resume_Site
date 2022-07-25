@@ -1,3 +1,5 @@
+/*
+
 // Import funnyResponse() from hw4-scripts.js as backup
 import {funnyResponse} from '../scripts/hw4-scripts.js';
 
@@ -67,3 +69,5 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 // export {closeModal, modal_alert, modal_confirm, modal_prompt};
+
+*/
