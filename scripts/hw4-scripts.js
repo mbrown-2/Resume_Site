@@ -5,11 +5,6 @@ let dialogBox = document.getElementById('custom_dialog');
 let subTree_p1 = document.querySelectorAll('#part_1_buttons');
 let buttons_p1 = subTree_p1[0].getElementsByTagName('button');
 
-// Helper function to make the dialog box vanish on click
-function vanish() {
-    dialogBox.close();
-}
-
 // Helper function to handle printing statements based on user-input
 function textResponse(input) {
     if (input == null || input == '') { 
@@ -68,7 +63,7 @@ function main() {
     buttons_p1[1].addEventListener('click', confirmPressed);
     buttons_p1[2].addEventListener('click', promptPressed);
     buttons_p1[3].addEventListener('click', saferPressed);
-    dialogBox.addEventListener('click', vanish);
+    dialogBox.addEventListener('click', dialogBox.close);
 }
 
 window.addEventListener('DOMContentLoaded', main);
