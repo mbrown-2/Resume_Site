@@ -1,3 +1,51 @@
+// Obtain dialog box by ID
+let modalBox = document.getElementById('dialog_p2');
+
+// Subtree for accessing buttons later below
+let subTree_p2 = document.querySelectorAll('#part_2_buttons');
+let buttons_p2 = subTree_p2[0].getElementsByTagName('button');
+
+// Obtain a subtree's nodes
+let modalNodes = document.querySelectorAll('#dialog_p2')[0].childNodes;
+// The nodes are separated by 'text' nodes in the DOM
+let modalText = modalNodes[1];          // <p>
+let modalLabel = modalNodes[3];         // <label>
+let modalInput = modalNodes[5];         // <input>
+let modalCancel = modalNodes[7];        // <button>
+let modalConfirm = modalNodes[9];       // <button>
+
+// Helper method for closing the dialog box manually via 'click' event
+function modalVanish() {
+    modalBox.close();
+}
+
+// Custom alert button
+function customAlert() {
+    
+}
+
+// Custom confirm button
+function customConfirm() {
+
+}
+
+// Custom prompt button
+function customPrompt() {
+
+}
+
+// Main function for window to call
+function main() {
+    buttons_p2[0].addEventListener('click', customAlert);
+    buttons_p2[1].addEventListener('click', customConfirm);
+    buttons_p2[2].addEventListener('click', customPrompt);
+    modalBox.addEventListener('click', modalVanish);
+}
+
+// Window object with event listener for main()
+window.addEventListener('DOMContentLoaded', main);
+
+
 /*
 
 // Import funnyResponse() from hw4-scripts.js as backup

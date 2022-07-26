@@ -6,7 +6,6 @@
         <script src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.min.js"></script>
         <script type="module" src="../scripts/customdialog.js"></script>
         <script type="module" src="../scripts/hw4-scripts.js"></script>
-        <style> li {margin-bottom: 10px; } </style>
         <title>Native Dialogs</title>
     </head>
     <body>
@@ -25,35 +24,32 @@
                     <button type="button" id="safer_prompt">Safer Prompt</button>
                 </div>
                 <p><em>Note:</em> You can click the dialog pop-up box to close it!</p>
-                <hr />
-
                 <dialog id="custom_dialog">
                     <output id="dialog_text"></output>
                 </dialog>
+                <br />
             </section>
 
-            <br />
+            <hr /><br />
 
             <section>
                 <h2>Part 2 - Custom Dialogs</h2>
 
-                <ol>
-                    <li><button type="button" id="alert_custom">Alert</button></li>
-                    <li><button type="button" id="confirm_custom">Confirm</button></li>
-                    <li><button type="button" id="prompt_custom">Prompt</button></li>
-                </ol>
+                <div id="part_2_buttons">
+                    <button type="button" id="alert_custom">Alert</button>
+                    <button type="button" id="confirm_custom">Confirm</button>
+                    <button type="button" id="prompt_custom">Prompt</button>
+                </div>
 
-
-
-                <dialog id="part_2" style="text-align: center;">
-                    <p id="modal_dialog"></p>
-                    <label for="anyInput" id="inputLabel"></label>
-                    <input type="text" id="anyInput" name="anyInput"><br />
+                <dialog id="dialog_p2" style="text-align: center;">
+                    <p id="modal_text"></p>
+                    <label for="user_input" id="input_label"></label>
+                    <input type="text" id="user_input" name="user_input">
                     <button id="cancel_modal">Cancel</button>
                     <button id="confirm_modal">Ok</button>
                 </dialog>
 
-                <p id="part_2_output"></p>
+                <p id="output_p2"></p>
 
             </section>
         </main>
