@@ -2,19 +2,34 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="#">
         <!-- Using a DOM Purifier -->
         <script src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.min.js"></script>
-        <script type="module" src="../scripts/hw4-scripts.js"></script>
         <script type="module" src="../scripts/customdialog.js"></script>
-        <style> li {margin-bottom: 10px; } </style>
-        <title>Simple CRUD</title>
+        <script type="module" src="../scripts/hw4-scripts.js"></script>
+        <script type="module" src="../scripts/blog.js"></script>
+        <title>CRUD</title>
     </head>
     <body>
         <header>
-            <h1>HW4 - Experiments</h1>
+            <h1>HW4 - Simple Crud</h1>
+            <h2>A List of Posts</h2>
         </header>
         <main>
+            <button id="add_post">Add New Post</button>
+
+            <dialog open id="post_dialog" style="text-align: left;">
+                <label for="title">Post title:</label>
+                <input type="text" id="title" name="title">
+                <br /><br />
+                <label for="date">Post date:</label>
+                <input type="date" id="date" name="date">
+                <br /><br />
+                <label for="summary">Post summary (1-2 sentences):</label>
+                <input type="text" id="summary" name="summary">
+                <br /><br />
+                <button id="cancel_post">Cancel</button>
+                <button id="save_post">Save</button>
+            </dialog>
             
         </main>
     </body>
