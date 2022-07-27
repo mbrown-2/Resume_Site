@@ -6,7 +6,6 @@
         <script src="https://cdn.jsdelivr.net/gh/cure53/DOMPurify/dist/purify.min.js"></script>
         <!-- <script type="module" src="../scripts/customdialog.js"></script> -->
         <!-- <script type="module" src="../scripts/hw4-scripts.js"></script> -->
-        <script type="module" src="../scripts/blog.js"></script>
         <title>CRUD</title>
     </head>
     <body>
@@ -29,6 +28,7 @@
                 <input type="text" id="summary" name="summary">
                 <br /><br />
                 <button id="cancel_post">Cancel</button>
+                <button id="edit_post">Confirm Edit</button>
                 <button id="save_post">Save</button>
             </dialog>
             <p id="message_notif"> </p>
@@ -36,22 +36,25 @@
 
             <div id="post_list" style="text-align: left; margin-right: 2%;">
                 <div class="entry">
-                    <h2>Post 1</h2>
-                    <h3>Date 1</h3>
-                    <p>Summary 1 will be in this location</p>
-                    <button id="edit">Edit</button>
-                    <button id="delete">Delete</button>
+                    <h2 class="title">Week 5 Already?</h2>
+                    <h3 class="date">2022-07-25</h3>
+                    <p class="summary">Class so far has been fun. Albeit, things feel like they're just getting started.</p>
+                    <button class="edit" onclick="changePost(this)">Edit</button>
+                    <button class="delete" onclick="removePost(this)">Delete</button>
                     <br /><br />
                 </div>
                 <div class="entry">
-                    <h2>Post 2</h2>
-                    <h3>Date 2</h3>
-                    <p>Summary 2 will be in this location</p>
-                    <button id="edit">Edit</button>
-                    <button id="delete">Delete</button>
-                    <br />
+                    <h2 class="title">Time Flies By...</h2>
+                    <h3 class="date">2022-07-26</h3>
+                    <p class="summary">I've still so much I've yet to complete on my website. So much that I want to do...</p>
+                    <button class="edit" onclick="changePost(this)">Edit</button>
+                    <button class="delete" onclick="removePost(this)">Delete</button>
+                    <br /><br />
                 </div>
             </div>
         </main>
+        <!-- Attached at end for onClick -->
+        <!-- Reason is for resolving Uncaught reference errors for deletions and edits -->
+        <script type="text/javascript" type="module" src="../scripts/blog.js"></script>
     </body>
 </html>
