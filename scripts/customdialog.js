@@ -20,7 +20,7 @@ let modalConfirm = modalNodes[11];          // <button>
 // Confirm button helper (removes illegal invocation)
 function closeModal() {
     modalBox.close();
-    modalOutput.innerHTML = modalInput.value;
+    modalOutput.innerHTML = DOMPurify.sanitize(modalInput.value);
     modalInput.value = '';
 }
 
