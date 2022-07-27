@@ -3,7 +3,6 @@ let dialogBox = document.getElementById('post_dialog');
 let addPost = document.getElementById('add_post');
 let cancelPost = document.getElementById('cancel_post');
 let editPost = document.getElementById('edit_post');
-// editPost.style.display = 'none';
 let savePost = document.getElementById('save_post');
 let messageNotif = document.getElementById('message_notif');
 let postList = document.getElementById('post_list');
@@ -13,6 +12,18 @@ let title = userInputs[0];
 let date = userInputs[1];
 let summary = userInputs[2];
 
+// Creating an array for localStorage
+let localData = [];
+let acceptPostData = () => {
+    localData.push({
+        title: title.value,
+        date: date.value,
+        summary: summary.value,
+    });
+
+    localStorage.setItem(Date.now().toString(), JSON.stringify(localData));
+    console.log(localData);
+};
 
 // Helpers
 function openBox() {
@@ -66,6 +77,7 @@ let createPost = () => {
         <br /><br />
     </div>
     `;
+    acceptPostData();
     title.value = '';
     date.value = '';
     summary.value = '';
@@ -97,10 +109,14 @@ let changePost = (element) => {
         parent.querySelectorAll('.summary')[0].innerHTML = postData['summary'];
         savePost.style.display = 'inline';
         editPost.style.display = 'none';
-        title.value = '';
-        date.value = '';
-        summary.value = '';
-        dialogBox.close();
+
+        // Delay the refresh of dialog to prevent preemptive overwriting of values
+        setTimeout(() => {
+            title.value = '';
+            date.value = '';
+            summary.value = '';
+            dialogBox.close();
+        }, 0);
     });
 };
 
