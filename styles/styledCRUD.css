@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html {
+    background-color: #dfe8f7;
+}
+
+body {
+    font-family: 'Inter';
+}
+
+header {
+    text-align: center;
+}
+
+header > a:link, header > a:visited {
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    padding: .5rem;
+    border-radius: 1rem;
+    border-color:rgb(0, 0, 0);
+    font-size: 1.3rem;
+    color: black;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+
+header > a {
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+header > a:hover {
+    background-color: rgb(73, 73, 73);
+    color: rgb(95, 178, 255);
+    transition-duration: 500ms;
+}
+
+.nav-dot:focus, .nav-dot:active {
+    background-color: rgb(54, 153, 247);
+    transition-duration: 500ms;
+}
+
+.entry {
+    background-color: white;
+    margin: 2%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border-width: 100px;
+    border: solid black 2px;
+}
+
+p {
+    font-weight: bold;
+}
