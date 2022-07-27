@@ -63,3 +63,49 @@ header > a:hover {
 p {
     font-weight: bold;
 }
+
+#add_post {
+    text-align: center;
+}
+
+button {
+    font-weight: bold;
+    background-color: black;
+    border-radius: 1rem;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+
+#save_post, #edit_post {
+    color: black;
+    background-color: #8aff78;
+    border: solid #43ff26 5px;
+}
+
+#add_post {
+    color: white;
+    display: block;
+    margin: auto;
+    background-color: #3b52eb;
+    border: solid #1634f5 5px;
+}
+
+.edit {
+    color: black;
+    background-color: #ffc259;
+    border: solid #ffa200 5px;
+}
+
+.delete, #cancel_post {
+    background-color: #ff4e47;
+    border: solid #ff1d14 5px;
+}
+
+hr {
+    border: 5px solid black;
+    border-radius: 1rem;
+}
