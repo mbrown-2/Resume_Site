@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's HTTP Time Take 2</title>
+</head>
+<body>
+
+<h1>It's HTTP Time Take 2!</h1>
+<form action="https://www.httpbin.org/post" method="post" target="response_frame" id="test_form">
+
+    <div>
+        <label for="user_name">Username: </label>
+        <input type="text" name="user_name" id="user_name">
+    </div>
+
+    <div>
+        <label for="user_pass">Password: </label>
+        <input type="text" name="user_pass" id="user_pass">
+    </div>
+
+    <div>
+        <button type="submit">Send</button>
+    </div>
+
+    <fieldset>
+        <legend>Server Response</legend>
+        <output id="response"></output>
+        <noscript>
+            <iframe id="response_frame" name="response_frame"></iframe>
+        </noscript>
+    </fieldset>
+</form>
+
+<script type="module">
+
+
+    window.addEventListener('DOMContentLoaded',init);
+
+    /**
+     * init - bind DOM properties, read defaults, and set-up for execution
+     */
+    function init() {
+        document.getElementById('test_form').addEventListener('submit', jsSend);
+        log(`Initialized at ${new Date()}`);
+    } /* init */
+    /**
+     * function jsSend - sends an XHR request to the endpoint but uses the FORMData API and
+     *                     other small improvements
+     */
+    function jsSend(event) {
+        log(`Entering jsSend`);
+        // kill the submit of the form by the browser and handle it ourselves
+        event.preventDefault();     // Tell user agent that if event not explicitly handled, default should not be taken as normally
+        event.stopPropagation();
+        let form = document.getElementById('test_form');
+
+        let method = form.method;
+        let endpoint = form.action;
+        let payload = new FormData(form);
+        let xhr = new XMLHttpRequest();
+
+        xhr.open(method,endpoint, true);
+
+        xhr.onload = () => document.getElementById('response').innerHTML = xhr.responseText;
+
+        xhr.send(payload);
+
+    } /* jsSend */
+
+
+    // simple trace scaffold -- could consider naming a certain way for auto-stripping
+    const DEBUG = true;
+    const log = (msg) => {if (DEBUG) console.log(msg)}
+
+</script>
+<script nomodule>
+    // handle the JS is on but no module situation if you think that is important
+</script>
+
+<!-- could address the CSS on/off as well -->
+
+</body>
+</html>

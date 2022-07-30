@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script></script>
+        <link rel="stylesheet" href="../styles/hw5-styles.css">
+        <title>HW5 - Method Test</title>
+    </head>
+    <body>
+        <header>
+            <h1>HW5 - Method Test</h1>
+        </header>
+
+        <main>
+            <h2>Requets and Interactivity</h2>
+            
+            <form action="https://httpbin.org/post" method="post" target="fetch_frame" id="user_form">
+                
+                <div id="select_crud">
+                    <label for="user_select">Select your CRUD:</label>
+                    <select name="user_select" id="user_select" required>
+                        <option value="">--</option>
+                        <option value="create">Create</option>
+                        <option value="read">Read</option>
+                        <option value="update">Update</option>
+                        <option value="delete">Delete</option>
+                    </select>
+                    <br /><br />
+                </div>
+
+                <div id="select_type">
+                    <label for="user_request_type">Select your request type:</label>
+                    <select name="user_request_type" id="user_request_type" required>
+                        <option value="">--</option>
+                        <option value="xmlhttprequest">XMLHttpRequest</option>
+                        <option value="fetch">Fetch</option>
+                    </select>
+                    <br /><br /><hr /><br />
+                </div>
+                
+                <div id="id">
+                    <label for="record_id">Input ID:</label>
+                    <input type="text" id="record_id" name="record_id" required>
+                    <br /><br />
+                </div>
+                
+                <div id="name">
+                    <label for="article_name">Article name:</label>
+                    <input type="text" id="article_name" name="article_name" required>
+                    <br /><br />
+                </div>
+
+                <div id="body">
+                    <label for="article_body">Article body/content:</label>
+                    <textarea id="article_body" name="article_body" rows="3" cols="40" placeholder="Enter here" required></textarea>
+                    <br /><br />
+                </div>
+
+                <div id="time" hidden>
+                    <input type="text" id="date" name="date">
+                </div>
+
+                <button type="submit" id="submit_button">Post Entry</button>
+                
+                <br /><br />
+                <fieldset id="fieldset">
+                    <legend>Server Response</legend>
+                    <output id="response">&nbsp;</output>
+                    <noscript>
+                        <iframe id="fetch_frame" name="fetch_frame"></iframe>
+                    </noscript>
+                </fieldset>
+            </form>
+
+            <script type="module">
+                // Scope down selector for future reference
+                let divNodes = document.querySelectorAll('#user_form')[0];
+                let crudSelector = divNodes[0];                                 // Option CRUD type
+                let typeSelector = divNodes[1];                                 // Option XML or Fetch()
+                let dateInput = divNodes[5];                                    // For date / time
+
+                let userForm = document.getElementById('user_form');
+                let responseWindow = document.getElementById('response');
+
+                window.addEventListener('DOMContentLoaded', main);
+                
+                function main() {
+                    document.getElementById('user_form').addEventListener('submit', function() {
+                        if(crudSelector.value == 'create') {
+                            jsPost(event);
+                        } else if(crudSelector.value == 'read') {
+                            jsGet();
+                        } else if(crudSelector.value == 'update') {
+                            jsEdit();
+                        } else {
+                            jsDelete();
+                        }
+                    });
+
+                }
+
+                function jsPost(event) {
+                    dateInput.value = (new Date()).toString();
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    let payload = new FormData(userForm);
+                    let xhr = new XMLHttpRequest();
+                    
+                    xhr.open('POST', 'https://httpbin.org/post', true);
+                    xhr.onload = () => responseWindow.innerHTML = xhr.responseText;
+                    xhr.send(payload);
+
+                }
+
+                function jsGet(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    let method = 'get';
+                }
+
+                function jsEdit(event) {
+                    console.log(`Initialized at ${new Date()}`);
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    let method = 'post';
+                }
+
+                function jsDelete(event) {
+                    console.log('in delete');
+
+                    let method = 'post';
+                }
+
+                // For debugging; provides a path for tracing errors should any occur
+                const DEBUG = true;
+                const log = (msg) => {if (DEBUG) console.log(msg)}
+
+            </script>
+        </main>
+    </body>
+</html>
