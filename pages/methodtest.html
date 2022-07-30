@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script></script>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="../styles/hw5-styles.css">
         <title>HW5 - Method Test</title>
     </head>
@@ -14,7 +14,7 @@
             <h2>Requets and Interactivity</h2>
             
             <form action="https://httpbin.org/post" method="post" target="fetch_frame" id="user_form">
-                
+
                 <div id="select_crud">
                     <label for="user_select">Select your CRUD:</label>
                     <select name="user_select" id="user_select" required>
@@ -26,7 +26,7 @@
                     </select>
                     <br /><br />
                 </div>
-
+    
                 <div id="select_type">
                     <label for="user_request_type">Select your request type:</label>
                     <select name="user_request_type" id="user_request_type" required>
@@ -36,7 +36,7 @@
                     </select>
                     <br /><br /><hr /><br />
                 </div>
-                
+
                 <div id="id">
                     <label for="record_id">Input ID:</label>
                     <input type="text" id="record_id" name="record_id" required>
@@ -71,6 +71,8 @@
                 </fieldset>
             </form>
 
+            <br /><hr /><br />
+
             <script type="module">
                 // Scope down selector for future reference
                 let divNodes = document.querySelectorAll('#user_form')[0];
@@ -84,22 +86,22 @@
                 window.addEventListener('DOMContentLoaded', main);
                 
                 function main() {
+                    dateInput.value = new Date();
                     document.getElementById('user_form').addEventListener('submit', function() {
                         if(crudSelector.value == 'create') {
                             jsPost(event);
                         } else if(crudSelector.value == 'read') {
-                            jsGet();
+                            jsGet(event);
                         } else if(crudSelector.value == 'update') {
-                            jsEdit();
+                            jsEdit(event);
                         } else {
-                            jsDelete();
+                            jsDelete(event);
                         }
                     });
 
                 }
 
                 function jsPost(event) {
-                    dateInput.value = (new Date()).toString();
                     event.preventDefault();
                     event.stopPropagation();
 
@@ -116,7 +118,12 @@
                     event.preventDefault();
                     event.stopPropagation();
 
-                    let method = 'get';
+                    let payload = new FormData(userForm);
+                    let xhr = new XMLHttpRequest();
+                    
+                    xhr.open('GET', 'https://httpbin.org/get', true);
+                    xhr.onload = () => responseWindow.innerHTML = xhr.responseText;
+                    xhr.send(payload);
                 }
 
                 function jsEdit(event) {
