@@ -22,29 +22,29 @@
                     <label for="user_select">Select your CRUD:</label>
                     <select name="user_select" id="user_select" required>
                         <option value="">--</option>
-                        <option value="create">Create</option>
-                        <option value="read">Read</option>
-                        <option value="update">Update</option>
-                        <option value="delete">Delete</option>
+                        <option value="post">POST</option>
+                        <option value="get">GET</option>
+                        <option value="put">PUT</option>
+                        <option value="delete">DELETE</option>
                     </select>
                     <br /><br />
                 </div>
 
                 <div id="id">
                     <label for="record_id">Input ID:</label>
-                    <input type="text" id="record_id" name="record_id" required>
+                    <input type="text" id="record_id" name="record_id">
                     <br /><br />
                 </div>
                 
                 <div id="name">
                     <label for="article_name">Article name:</label>
-                    <input type="text" id="article_name" name="article_name" required>
+                    <input type="text" id="article_name" name="article_name">
                     <br /><br />
                 </div>
 
                 <div id="body">
                     <label for="article_body">Article body/content:</label>
-                    <textarea id="article_body" name="article_body" rows="3" cols="40" placeholder="Enter here" required></textarea>
+                    <textarea id="article_body" name="article_body" rows="3" cols="40" placeholder="Enter here"></textarea>
                     <br /><br />
                 </div>
 
@@ -70,73 +70,52 @@
                 // Scope down selector for future reference
                 let divNodes = document.querySelectorAll('#user_form')[0];
                 let crudSelector = divNodes[0];                                 // Option CRUD type
+                let id = divNodes.firstChild;
+                let name = id.nextSibling;
+                let body = name.nextSibling;
                 let dateInput = divNodes[4];                                    // For date / time
 
                 let userForm = document.getElementById('user_form');
                 let responseWindow = document.getElementById('response');
 
+                console.log(divNodes[2]);
+
                 window.addEventListener('DOMContentLoaded', main);
                 
                 function main() {
-                    crudSelector.addEventListener('change', () => alterDisplay(crudSelector.value));
+                    // crudSelector.addEventListener('change', () => alterDisplay(crudSelector.value));
 
-                    document.getElementById('user_form').addEventListener('submit', function() {
+                    userForm.addEventListener('submit', function() {
                         // Create date at time of submitting a query
                         dateInput.value = new Date();
-
-                        // Determine CRUD action
-                        if(crudSelector.value == 'create') {
-                            jsPost(event);
-                        } else if(crudSelector.value == 'read') {
-                            jsGet(event);
-                        } else if(crudSelector.value == 'update') {
-                            jsEdit(event);
-                        } else {
-                            jsDelete(event);
-                        }
+                        makeRequest(event);
                     });
                 }
 
-                function alterDisplay(value) {
-                    console.log(value);
+                function transform(value) {
+                    if (value == 'post') {
+
+                    } else if (value == 'get') {
+
+                    } else if (value == 'put') {
+
+                    } else {
+                        
+                    }
                 }
 
-                function jsPost(event) {
+               
+
+                function makeRequest(event) {
                     event.preventDefault();
                     event.stopPropagation();
 
                     let payload = new FormData(userForm);
                     let xhr = new XMLHttpRequest();
-                    
-                    xhr.open('POST', 'https://httpbin.org/post', true);
+
+                    xhr.open(crudSelector.value, 'https://httpbin.org/' + crudSelector.value, true);
                     xhr.onload = () => responseWindow.innerHTML = xhr.responseText;
                     xhr.send(payload);
-                }
-
-                function jsGet(event) {
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    let payload = new FormData(userForm);
-                    let xhr = new XMLHttpRequest();
-                    
-                    xhr.open('GET', 'https://httpbin.org/get', true);
-                    xhr.onload = () => responseWindow.innerHTML = xhr.responseText;
-                    xhr.send(payload);
-                }
-
-                function jsEdit(event) {
-                    console.log(`Initialized at ${new Date()}`);
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    let method = 'post';
-                }
-
-                function jsDelete(event) {
-                    console.log('in delete');
-
-                    let method = 'post';
                 }
 
                 // For debugging; provides a path for tracing errors should any occur
