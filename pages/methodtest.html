@@ -70,8 +70,7 @@
                 // Scope down selector for future reference
                 let divNodes = document.querySelectorAll('#user_form')[0];
                 let crudSelector = divNodes[0];                                 // Option CRUD type
-                let typeSelector = divNodes[1];                                 // Option XML or Fetch()
-                let dateInput = divNodes[5];                                    // For date / time
+                let dateInput = divNodes[4];                                    // For date / time
 
                 let userForm = document.getElementById('user_form');
                 let responseWindow = document.getElementById('response');
@@ -79,8 +78,13 @@
                 window.addEventListener('DOMContentLoaded', main);
                 
                 function main() {
-                    dateInput.value = new Date();
+                    crudSelector.addEventListener('change', () => alterDisplay(crudSelector.value));
+
                     document.getElementById('user_form').addEventListener('submit', function() {
+                        // Create date at time of submitting a query
+                        dateInput.value = new Date();
+
+                        // Determine CRUD action
                         if(crudSelector.value == 'create') {
                             jsPost(event);
                         } else if(crudSelector.value == 'read') {
@@ -91,7 +95,10 @@
                             jsDelete(event);
                         }
                     });
+                }
 
+                function alterDisplay(value) {
+                    console.log(value);
                 }
 
                 function jsPost(event) {
@@ -104,7 +111,6 @@
                     xhr.open('POST', 'https://httpbin.org/post', true);
                     xhr.onload = () => responseWindow.innerHTML = xhr.responseText;
                     xhr.send(payload);
-
                 }
 
                 function jsGet(event) {
@@ -136,18 +142,6 @@
                 // For debugging; provides a path for tracing errors should any occur
                 const DEBUG = true;
                 const log = (msg) => {if (DEBUG) console.log(msg)}
-
-                /*
-                <div id="select_type">
-                    <label for="user_request_type">Select your request type:</label>
-                    <select name="user_request_type" id="user_request_type" required>
-                        <option value="">--</option>
-                        <option value="xmlhttprequest">XMLHttpRequest</option>
-                        <option value="fetch">Fetch</option>
-                    </select>
-                    <br /><br /><hr /><br />
-                </div>
-                */
             </script>
         </main>
     </body>
