@@ -70,20 +70,21 @@
                 // Scope down selector for future reference
                 let divNodes = document.querySelectorAll('#user_form')[0];
                 let crudSelector = divNodes[0];                                 // Option CRUD type
-                let id = divNodes.firstChild;
-                let name = id.nextSibling;
-                let body = name.nextSibling;
+                let id = divNodes[1].previousSibling.parentNode
+                let name = divNodes[2].previousSibling.parentNode
+                let body = divNodes[3].previousSibling.parentNode
                 let dateInput = divNodes[4];                                    // For date / time
+
+                console.log(name.getElementsByTagName('label')[0].innerHTML);
 
                 let userForm = document.getElementById('user_form');
                 let responseWindow = document.getElementById('response');
 
-                console.log(divNodes[2]);
 
                 window.addEventListener('DOMContentLoaded', main);
                 
                 function main() {
-                    // crudSelector.addEventListener('change', () => alterDisplay(crudSelector.value));
+                    crudSelector.addEventListener('change', () => alterDisplay(crudSelector.value));
 
                     userForm.addEventListener('submit', function() {
                         // Create date at time of submitting a query
@@ -92,15 +93,23 @@
                     });
                 }
 
-                function transform(value) {
-                    if (value == 'post') {
-
+                function alterDisplay(value) {
+                    if (value == 'post' || value == '') {
+                        id.getElementsByTagName('label')[0].innerHTML = 'Input ID:'
+                        name.style.display = 'inline';
+                        body.style.display = 'inline';
                     } else if (value == 'get') {
-
+                        id.getElementsByTagName('label')[0].innerHTML = 'ID to retrieve:'
+                        name.style.display = 'none';
+                        body.style.display = 'none';
                     } else if (value == 'put') {
-
+                        id.getElementsByTagName('label')[0].innerHTML = 'ID to edit:'
+                        name.style.display = 'inline';
+                        body.style.display = 'inline';
                     } else {
-                        
+                        id.getElementsByTagName('label')[0].innerHTML = 'ID to delete:'
+                        name.style.display = 'none';
+                        body.style.display = 'none';
                     }
                 }
 
